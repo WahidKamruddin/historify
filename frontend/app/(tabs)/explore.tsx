@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import ThemedView from "@/components/themedView";
+import { Text } from "@/components/ui/text";
 
 const Explore = () => {
   return (
-    <View>
+    <ThemedView>
       <Text>Explore</Text>  
-    </View>
+    </ThemedView>
   )
 }
 

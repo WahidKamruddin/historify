@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import "dotenv/config";
+import exploreRoutes from './routes/exploreRoutes.js'
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -10,7 +11,7 @@ const PORT = process.env.PORT || 3001;
 app.use(helmet());
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-domain.com'] 
+    ? ['https://historify-app.com'] 
     : ['http://localhost:8081', 'http://localhost:19006'], // Expo dev server ports
   credentials: true
 }));
@@ -21,16 +22,18 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', message: 'Historify Backend is running!' });
 });
 
-// Import routes
-import protectedRoutes from './routes/protected.js';
 
-// API routes
+//routes
+app.use('/api/explore', exploreRoutes);
+
+
+
+
+// testing route
 app.get('/api/test', (req, res) => {
   res.json({ message: 'API is working!' });
 });
 
-// Protected routes (require authentication)
-app.use('/api/protected', protectedRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

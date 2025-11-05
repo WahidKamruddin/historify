@@ -1,6 +1,8 @@
 import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import React, { ReactNode } from 'react';
+
+import { ReactNode } from 'react';
+import React from 'react';
 
 type ThemedViewProps = {
   children: ReactNode;

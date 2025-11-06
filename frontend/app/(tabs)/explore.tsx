@@ -149,7 +149,7 @@ export default function ExploreScreen() {
         longitudeDelta: 0.05,
       }}
     >
-      {places? places : placesList.map(place => (
+      {places.map(place => (
         <Marker
           key={place.place_id}
           coordinate={{ latitude: place.lat, longitude: place.lng }}
@@ -165,7 +165,7 @@ export default function ExploreScreen() {
         onChange={handleSheetChange}
       >
         <BottomSheetFlatList
-          data={placesList}
+          data={places}
           keyExtractor={(i: { place_id: number }) => i.place_id}
           renderItem={renderItem}
         />

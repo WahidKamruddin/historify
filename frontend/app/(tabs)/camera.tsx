@@ -1,12 +1,22 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { ViroARSceneNavigator } from '@reactvision/react-viro';
+import ARTestScene from '@/components/ARTestScene';
 
 const Camera = () => {
   return (
-    <View>
-      <Text>Camera</Text>
+    <View style={styles.container}>
+      <ViroARSceneNavigator
+        initialScene={{ scene: ARTestScene }}
+        style={styles.arView}
+      />
     </View>
-  )
-}
+  );
+};
 
-export default Camera
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+  arView: { flex: 1 }
+});
+
+export default Camera;

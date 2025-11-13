@@ -5,7 +5,7 @@
 2. ✅ Device is unlocked
 3. ✅ Trust this computer on your device (if first time connecting)
 
-## Method 1: Using Xcode (Easiest)
+## Using Expo CLI
 
 1. Open the workspace:
    ```bash
@@ -18,10 +18,7 @@
    - Go to **Signing & Capabilities** tab
    - Check **"Automatically manage signing"**
    - Select your **Team** (sign in with Apple ID if needed - free accounts work!)
-   - In the device selector at the top, choose your device: **WaPapa**
-   - Click the **Play** button (▶) to build and run
-
-## Method 2: Using Expo CLI (After Xcode Setup)
+   - In the device selector at the top, choose your device:
 
 After configuring signing in Xcode once, you can use:
 
@@ -31,7 +28,7 @@ npx expo run:ios --device
 
 Or specify the device UDID:
 ```bash
-npx expo run:ios --device "00008130-000669DE0A10001C"
+npx expo run:ios --device "<deviceUUID>"
 ```
 
 ## Troubleshooting
@@ -59,8 +56,4 @@ npx expo run:ios --device "00008130-000669DE0A10001C"
   export RCT_NEW_ARCH_ENABLED=1
   ```
 
-## Device Information
-- **Device Name**: WaPapa
-- **iOS Version**: 18.5
-- **UDID**: 00008130-000669DE0A10001C
 

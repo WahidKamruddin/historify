@@ -18,14 +18,21 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.frontend"
+      "bundleIdentifier": "com.anonymous.frontend",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "$(PRODUCT_NAME) would like to read photos for AR experiences. This is a custom InfoPlist string!",
+        "NSPhotoLibraryAddUsageDescription": "Allow $(PRODUCT_NAME) to save photos",
+        "NSCameraUsageDescription": "$(PRODUCT_NAME) uses your camera for AR experiences. This is a custom InfoPlist string!",
+        "NSMicrophoneUsageDescription": "$(PRODUCT_NAME) uses your microphone for AR experiences. This is a custom InfoPlist string!"
+      }
     },
     "android": {
       "edgeToEdgeEnabled": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.frontend"
     },
     "web": {
       "bundler": "metro",

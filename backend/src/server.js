@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import "dotenv/config";
 import exploreRoutes from './routes/exploreRoutes.js'
+import cameraRoutes from './routes/cameraRoutes.js'
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -25,14 +26,8 @@ app.get('/health', (req, res) => {
 
 //routes
 app.use('/api/explore', exploreRoutes);
+app.use('/api/camera', cameraRoutes);
 
-
-
-
-// testing route
-app.get('/api/test', (req, res) => {
-  res.json({ message: 'API is working!' });
-});
 
 
 // Error handling middleware
